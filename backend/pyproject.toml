@@ -1,0 +1,9 @@
+[project]
+name = "bc-workflows-backend"
+version = "0.1.0"
+description = "Banker Connection workflows agent platform"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

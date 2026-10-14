@@ -1,0 +1,391 @@
+/* All class names are scoped by css-loader (bcw- prefix + hash). Fonts are inherited from the parent. */
+
+.root {
+  --bcw-red: #d71e28;
+  --bcw-red-dark: #b31b1b;
+  --bcw-ink: #141414;
+  --bcw-muted: #5a5a5a;
+  --bcw-line: #cfcfcf;
+  --bcw-surface: #ffffff;
+  --bcw-surface-alt: #f6f5f3;
+  font-family: inherit;
+  color: var(--bcw-ink);
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.root *,
+.root *::before,
+.root *::after {
+  box-sizing: inherit;
+}
+
+/* Home card */
+.homeCard {
+  background: var(--bcw-surface-alt);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.homeTitle {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.homeText {
+  margin: 0 0 24px;
+  font-size: 16px;
+  color: #3b3b3b;
+}
+
+.homeActions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.notice {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--bcw-muted);
+  text-align: right;
+}
+
+/* Workflow */
+.pageTitle {
+  margin: 0 0 16px;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.completedBar {
+  background: var(--bcw-surface);
+  border: 1px solid var(--bcw-line);
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 14px;
+  color: #1a4f8b;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.completedList {
+  text-align: left;
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+}
+
+.completedStep h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.panel {
+  background: var(--bcw-surface);
+  border: 1px solid var(--bcw-line);
+  border-radius: 12px;
+  padding: 24px 32px;
+}
+
+.heading {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.description {
+  margin: 0 0 24px;
+  font-size: 14px;
+  color: var(--bcw-muted);
+}
+
+.block {
+  margin-bottom: 24px;
+}
+
+.sectionLabel,
+.questionLabel {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.checkboxRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkboxRow input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--bcw-red);
+}
+
+.choiceRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.choice {
+  min-width: 64px;
+  padding: 6px 16px;
+  border: 1px solid #8c8c8c;
+  border-radius: 999px;
+  background: var(--bcw-surface);
+  font: inherit;
+  font-size: 14px;
+  color: var(--bcw-ink);
+  cursor: pointer;
+}
+
+.choiceSelected {
+  border: 2px solid var(--bcw-red);
+  background: #fdecee;
+  font-weight: 600;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--bcw-red-dark);
+}
+
+.errorIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bcw-red-dark);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+}
+
+@media (max-width: 640px) {
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: var(--bcw-muted);
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #8c8c8c;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--bcw-ink);
+  background: var(--bcw-surface);
+}
+
+.field input:disabled {
+  background: #eeeeee;
+  color: var(--bcw-muted);
+}
+
+.fieldInvalid input {
+  border-color: var(--bcw-red-dark);
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--bcw-muted);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bcw-ink);
+  animation: bcwPulse 1s infinite ease-in-out;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bcwPulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.button {
+  min-width: 140px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Back sits on the left, apart from Cancel / Continue. */
+.backButton {
+  margin-right: auto;
+}
+
+.secondary {
+  border: 1px solid var(--bcw-ink);
+  background: var(--bcw-surface);
+  color: var(--bcw-ink);
+}
+
+.primary {
+  border: 1px solid var(--bcw-red);
+  background: var(--bcw-red);
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--bcw-red-dark);
+}
+
+.alert {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 14px;
+}
+
+.alertWarning {
+  background: #fdf7e4;
+  border-color: #e5c96a;
+}
+
+.alertSuccess {
+  background: #eef7ee;
+  border-color: #9cc99c;
+}
+
+.alertIcon {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  font-weight: 700;
+}
+
+.alertWarning .alertIcon {
+  border: 2px solid var(--bcw-ink);
+  transform: rotate(45deg) scale(0.8);
+}
+
+.alertWarning .alertIcon span {
+  transform: rotate(-45deg);
+}
+
+.alertSuccess .alertIcon {
+  border: 2px solid #2e7d32;
+  border-radius: 50%;
+  color: #2e7d32;
+}
+
+.alertTitle {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.alertMessage {
+  margin: 0;
+}
+
+.alertLink {
+  display: inline-block;
+  margin-top: 8px;
+  color: #1a4f8b;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin: 0;
+}
+
+.summary dt {
+  font-size: 12px;
+  color: var(--bcw-muted);
+}
+
+.summary dd {
+  margin: 2px 0 0;
+  font-size: 15px;
+}
+
+.banner {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #fdecee;
+  color: var(--bcw-red-dark);
+  font-size: 14px;
+}

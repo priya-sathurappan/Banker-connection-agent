@@ -1,0 +1,19 @@
+# Requirements source (kept out of git unless decided otherwise)
+Doc1.docx
+~$*
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Local tooling
+.claude/settings.local.json
+.vscode/
+.idea/
